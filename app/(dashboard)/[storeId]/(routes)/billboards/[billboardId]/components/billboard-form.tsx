@@ -64,6 +64,7 @@ function BillbaordForm({initialData}: BillbaordFormProps) {
                 await axios.post(`/api/${params.storeId}/billboards`, data);
             }
             router.refresh();
+            router.push(`/${params.storeId}/billboards`);
             toast.success(toastMessage);
         } catch (error) {
            toast.error('Something went wrong.');
