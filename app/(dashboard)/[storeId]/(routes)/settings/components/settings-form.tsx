@@ -18,6 +18,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { useParams, useRouter } from 'next/navigation';
 import ApiAlert from '@/components/ui/api-alert';
+import { useOrigin } from '@/hooks/use-origin';
 
 
 interface SettingsFormProps {
@@ -34,6 +35,7 @@ function SettingsForm({initialData}: SettingsFormProps) {
 
     const params = useParams();
     const router = useRouter();
+    const origin = useOrigin();
 
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
